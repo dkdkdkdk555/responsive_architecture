@@ -14,14 +14,14 @@ class BaseWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     var mediaQuery = MediaQuery.of(context); // 사용자 화면에 대한 정보를 얻을 수 있는 클래스
     
-    return LayoutBuilder(builder: (context, constraints) {
+    return LayoutBuilder(builder: (context, constraints) { // 레이아웃 빌더
       var sizingInformation = SizingInformation(
       orientation: mediaQuery.orientation, 
       deviceScreenType: getDeviceType(mediaQuery),
       screenSize: mediaQuery.size,
       localWidgetSize: Size(constraints.maxWidth, constraints.maxHeight),
       );
-      return builder(context, sizingInformation);
+      return builder(context, sizingInformation); // 리턴 타입이 widget이기 때문에 리턴 결과에 위젯들어갈 수 있다. () => widget
     });
   }
 }
