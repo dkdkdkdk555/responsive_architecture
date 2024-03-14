@@ -5,10 +5,10 @@ import 'package:responsive_architecture/enums/device_screen_type.dart';
 import 'package:responsive_architecture/ui/sizing_information.dart';
 import 'package:responsive_architecture/utils/ui_utils.dart';
 
-class BaseWidget extends StatelessWidget {
+class ResponsiveBuilder extends StatelessWidget {
   final Widget Function(
     BuildContext context, SizingInformation sizingInformation) builder;
-  const BaseWidget({super.key, required this.builder});
+  const ResponsiveBuilder({super.key, required this.builder});
 
   @override
   Widget build(BuildContext context) {
